@@ -1,0 +1,21 @@
+<?php
+
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Harsh\Blog\ViewModel\Post $postVm 
+ * 
+ */
+$postVm = $block->getData('post_vm');
+?>
+<div class="blog-post-list">
+    <h1><?= __('Blog posts') ?></h1>
+    <ul>
+        <?php foreach ($postVm->getlist() as $post): ?>
+            <li>
+                <a href="<?= $block->getUrl('blog/post/sidebar', ['id' => $post->getData('id')]) ?>">
+                    <?= $post->getdata('title') ?>
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+    <p><?= __('Post count: %1', $postVm->getcount()) ?></p>
+</div>

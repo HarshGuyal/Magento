@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page layout="2columns-right" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+            <block name="blog.post.sidebar" template="Harsh_Blog::post/sidebar.phtml" />
+        </referenceContainer>
+        <referenceContainer name="main">
+            <block name="blog.post.detail" template="Harsh_Blog::post/detail.phtml"/>   
+            <!-- <container htmlTag="h1" htmlId="blog-header">
+            <block name="blog.post.sidebar.extra" template="Harsh_Blog::post/sidebar.phtml" />
+            </container> -->
+        </referenceContainer>
+        <!-- <move element="wishlist_sidebar" destination="sidebar.additional" before="catlog.compare.sidebar" /> -->
+        <referenceBlock name="catalog.compare.sidebar" display="false"></referenceBlock>
+        <referenceBlock name="wishlist_sidebar" template="Harsh_Blog::wishlist/sidebar.phtml">
+        </referenceBlock>
+        <referenceBlock name="wishlist_sidebar" display="false">
+            
+        </referenceBlock>
+    </body>
+</page>
