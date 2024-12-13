@@ -21,7 +21,7 @@ class PostRepository implements PostRepositoryInterface{
         $post = $this->postFactory->create();
         $this->postResourceModel->load($post,$id);
 
-        if($post->getId()){
+        if(!$post->getId()){
             throw new NoSuchEntityException(__('the blog post with "%1" ID doesn\t exist.', $id));
         }
         return $post;

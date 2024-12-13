@@ -1,11 +1,22 @@
 <?php
+
 /** @var Magento\Framework\View\Element\Template $block */
+/** @var Magento\Framework\Escaper $escaper */
+/** @var Harsh\Blog\ViewModel\Post $postVm 
+ * 
+ */
+$postVm = $block->getData('post_vm');
 ?>
 <div class="blog-post-sidebar">
     <p><strong><?= __('Other blog posts') ?></strong></p>
     <ul>
-        <li><a href="<?= $block->getUrl('blog/post/sidebar', ['id' => 1]) ?>">Post 1</a></li>
-        <li><a href="<?= $block->getUrl('blog/post/sidebar', ['id' => 2]) ?>">Post 2</a></li>
-        <li><a href="<?= $block->getUrl('blog/post/sidebar', ['id' => 3]) ?>">Post 3</a></li>
+        <?php foreach ($postVm->getlist() as $post): ?>
+            <li>
+                <a href="<?= $block->getUrl('blog/post/sidebar', ['id' => $post->getData('id')]) ?>">
+                    <?= $escaper->escapeHtml($post->getdata('title'))?>
+                </a>
+            </li>
+        <?php endforeach ?>
     </ul>
+    <p><?= __('Post count: %1', $postVm->getcount()) ?></p>
 </div>

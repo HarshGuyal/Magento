@@ -1,7 +1,11 @@
 <?php
 
 /** @var Magento\Framework\View\Element\Template $block */
+/**
+ * @var Magento\Framework\Escaper $escaper
+ */
 /** @var Harsh\Blog\ViewModel\Post $postVm 
+ * 
  * 
  */
 $postVm = $block->getData('post_vm');
@@ -12,7 +16,7 @@ $postVm = $block->getData('post_vm');
         <?php foreach ($postVm->getlist() as $post): ?>
             <li>
                 <a href="<?= $block->getUrl('blog/post/sidebar', ['id' => $post->getData('id')]) ?>">
-                    <?= $post->getdata('title') ?>
+                    <?= $escaper->escapeHtml($post->getdata('title')) ?>
                 </a>
             </li>
         <?php endforeach ?>
