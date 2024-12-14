@@ -2,9 +2,10 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Harsh\Blog\Observer\LogPostDetailView">
         <plugin name="harsh_blogextra_add_data_to_post_detail_observer" type="Harsh\BlogExtra\Plugin\AddDataToPostDetailObserver"/>
-        <plugin name="harsh_blogextra_prevent_post_detail_logger" type="Harsh\BlogExtra\Plugin\PreventPostDetailLogger"/>
+        <plugin name="harsh_blogextra_prevent_post_detail_logger" type="Harsh\BlogExtra\Plugin\PreventPostDetailLogger" disabled="true"/>
     </type>
     <type name="Harsh\Blog\Controller\Post\Sidebar">
         <plugin name="harsh_blogextra_alternate_post_detail_template" type="Harsh\BlogExtra\Plugin\AlternatePostDetailTemplate"/>
     </type>
+     <preference for="Harsh\Blog\Controller\Post\Sidebar" type="Harsh\BlogExtra\Controller\Post\Sidebar"/>
 </config>
