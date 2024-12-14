@@ -12,6 +12,7 @@ $postVm = $block->getData('post_vm');
     <ul>
         <?php foreach ($postVm->getlist() as $post): ?>
             <li>
+
                 <a href="<?= $block->getUrl('blog/post/sidebar', ['id' => $post->getData('id')]) ?>">
                     <?= $escaper->escapeHtml($post->getdata('title'))?>
                 </a>
