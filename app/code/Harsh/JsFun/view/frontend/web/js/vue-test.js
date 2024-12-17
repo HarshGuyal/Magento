@@ -1,11 +1,13 @@
-define(['vue'],function(Vue){
+define(['vue','jquery','Harsh_JsFun/js/jquery-log'],function(Vue,$){
     'use strict'
+
+    $.log('Testing output to the console')
 
     return function (config,element){
         return new Vue({
             el: '#' + element.id,
-            data: {
-                message: 'This is a test'
+            data: { 
+                message: config.message
             }
         })
     }

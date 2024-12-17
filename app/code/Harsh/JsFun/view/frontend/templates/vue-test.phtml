@@ -1,3 +1,17 @@
-<div id="vue-test" data-mage-init='{ "Harsh_JsFun/js/vue-test": {}}'>
+<?php
+/** @var \Harsh\JsFun\ViewModel\Message $messageViewModel */
+$messageViewModel = $block->getData('message_view_model');
+?>
+<div id="vue-test" >
     <h1>{{ message }}</h1>
 </div>
+
+<script type="text/x-magento-init">
+    {
+        "#vue-test":{
+            "Harsh_JsFun/js/vue-test": {
+                "message":"<?= $messageViewModel->getMessage()?>"
+            }
+        }
+    }
+</script>

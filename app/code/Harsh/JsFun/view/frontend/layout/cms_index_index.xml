@@ -3,8 +3,12 @@
     <body>
         <!-- Remove an argument by overriding it with an empty value -->
         <referenceContainer name="content">
-            <block name="vue.test" template="Harsh_JsFun::vue-test.phtml"/>
+            <block name="vue.test" template="Harsh_JsFun::vue-test.phtml">
+                <arguments>
+                    <argument name="message_view_model" xsi:type="object">Harsh\JsFun\ViewModel\Message</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
- 
+  
