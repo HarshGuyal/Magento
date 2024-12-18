@@ -375,6 +375,7 @@ return [
         'Magento_WishlistSampleData' => 1,
         'Harsh_Blog' => 1,
         'Harsh_BlogExtra' => 1,
+        'Harsh_FreeShippingPromo' => 1,
         'Harsh_JsFun' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeCustomerBalance' => 1,
