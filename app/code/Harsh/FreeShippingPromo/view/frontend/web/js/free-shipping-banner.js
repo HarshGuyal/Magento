@@ -25,6 +25,8 @@ define(['uiComponent',
 
             var self = this;
             var cart = customerData.get('cart');
+
+            console.log(self.freeShippingThreshold);
             
 
             customerData.getInitCustomerData().done(function(){
@@ -42,7 +44,7 @@ define(['uiComponent',
             self.message = ko.computed(function(){
                 //subtotal = 0, return messageDefault
                 if(_.isUndefined(self.subtotal) || self.subtotal === 0){
-                    return self.messageDefault;
+                    return self.messageDefault.replace('{{freeShippingThreshold}}',self.freeShippingThreshold);
                 }
 
                 //subtotal > 0 or < 100, return messageItemsInCart

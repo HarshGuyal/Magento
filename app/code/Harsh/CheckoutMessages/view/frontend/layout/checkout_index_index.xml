@@ -14,12 +14,19 @@
                                                 <item name="component" xsi:type="string">Harsh_CheckoutMessages/js/view/summary/shipping-time</item>
                                                 <item name="config" xsi:type="array">
                                                     <item name="template" xsi:type="string">Harsh_CheckoutMessages/summary/shipping-time</item>
+                                                    <item name="displayArea" xsi:type="string">extra</item>
+                                                    <item name="shippingAddressProvider" xsi:type="string">checkoutProvider:shippingAddress</item>
+                                                    <item name="deps" xsi:type="array">
+                                                        <item name="0" xsi:type="string">checkout.sidebar.guarantee</item>
+                                                        <item name="1" xsi:type="string">checkout.sidebar.summary</item>
+                                                    </item>
                                                 </item>
                                             </item>
                                             <item name="guarantee" xsi:type="array">
-                                                <item name="component" xsi:type="string">uiComponent</item>
+                                                <item name="component" xsi:type="string">Harsh_CheckoutMessages/js/view/summary/guarantee</item>
                                                 <item name="config" xsi:type="array">
                                                     <item name="template" xsi:type="string">Harsh_CheckoutMessages/summary/guarantee</item>
+                                                    <item name="displayArea" xsi:type="string">extra</item>
                                                 </item>
                                             </item>
                                         </item>
