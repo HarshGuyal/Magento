@@ -377,6 +377,7 @@ return [
         'Harsh_BlogExtra' => 1,
         'Harsh_CheckoutMessages' => 1,
         'Harsh_FreeShippingPromo' => 1,
+        'Harsh_InventoryFulfillment' => 1,
         'Harsh_JsFun' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeCustomerBalance' => 1,
