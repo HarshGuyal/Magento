@@ -22,6 +22,16 @@
                                     </item>
                                 </item>
                             </item>
+                            <item name="reviewsubmit" xsi:type="array">
+                                <item name="component" xsi:type="string">
+                                Harsh_InventoryFulfillment/js/review-submit
+                                </item>
+                                <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">
+                                    Harsh_InventoryFulfillment/review-submit
+                                    </item>
+                                </item>
+                            </item>
                         </item>
                     </argument>
                 </arguments>
