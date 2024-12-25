@@ -38,6 +38,27 @@ define([
         },
         delete: function(index) {
             this.boxConfigurations.splice(index, 1);
+        },
+        numberOfBoxes: function(){
+            return ko.computed(() => {
+                return this.boxConfigurations().reduce(function(runningTotal,boxConfiguration){
+                    return runningTotal + (boxConfiguration.numberOfBoxes() || 0);
+                },0);
+            });
+        },
+        totalWeight: function(){
+            return ko.computed(() =>{
+                return this.boxConfigurations().reduce(function(runningTotal,boxConfiguration){
+                    return runningTotal + (boxConfiguration.totalWeight() || 0);
+                },0);
+            })
+        },
+        billableWeight: function(){
+            return ko.computed(() =>{
+                return this.boxConfigurations().reduce(function(runningTotal,boxConfiguration){
+                    return runningTotal + (boxConfiguration.billableWeight() || 0);
+                },0);
+            })
         }
     };
 });

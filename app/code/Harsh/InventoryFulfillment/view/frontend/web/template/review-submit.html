@@ -1,4 +1,4 @@
-<div class="review-submit">
+<div class="review-submit" data-bind="visible: boxConfigurationsIsSuccess">
     <h2>Review and Submit</h2>
     <p>Please review the box configurations before submitting</p>
     <table>
@@ -17,6 +17,6 @@
             </tr>
         </tbody>
     </table>
-    <input type="checkbox" name="review-checkbox">I agree to Terms & Conditions.</input>
-    <button class="action primary" type="submit">Accept Shipping Plan</button>
+    <input type="checkbox" name="review-checkbox" data-bind="checked: checkBox">I agree to Terms & Conditions.</input>
+    <button class="action primary" type="submit" data-bind="enable: getButtonUpdate()">Accept Shipping Plan</button>
 </div>
