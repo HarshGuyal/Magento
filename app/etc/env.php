@@ -129,7 +129,7 @@ return [
         'graphql_query_resolver_result' => 1,
         'full_page' => 0,
         'config_webservice' => 1,
-        'translate' => 1
+        'translate' => 0
     ],
     'downloadable_domains' => [
         'magento.test'

@@ -1,17 +1,20 @@
 define(['uiComponent',
     'ko',
     'Harsh_InventoryFulfillment/js/model/box-configurations',
-    'Harsh_InventoryFulfillment/js/model/sku'],
+    'Harsh_InventoryFulfillment/js/model/sku',
+    'mage/url',
+    'mage/storage'],
     function (
         Component,
         ko,
-        boxConfigurationsModel,
-        skuModel) {
+        boxConfigurationsModel, 
+        skuModel,url,storage) {
         'use strict'
 
         return Component.extend({
             defaults: {
                 data: null,
+                skuConfigSuccess:null,
                 numberOfBoxes: boxConfigurationsModel.numberOfBoxes(),
                 totalWeight : boxConfigurationsModel.totalWeight(),
                 billableWeight : boxConfigurationsModel.billableWeight(),
@@ -19,7 +22,9 @@ define(['uiComponent',
                 buttonUpdate : ko.observable(false),
                 boxConfigUpdate : ko.observable(false),
                 skuUpdate : ko.observable(false),
-                boxConfigurationsIsSuccess: boxConfigurationsModel.isSuccess
+                boxConfigurationsIsSuccess: boxConfigurationsModel.isSuccess,
+                boxConfigurations: boxConfigurationsModel.boxConfigurations,
+                sku: skuModel.sku
             },
             initialize() {
                 this._super();
@@ -72,6 +77,23 @@ define(['uiComponent',
             },
             getButtonUpdate(){
                 return this.buttonUpdate();
+            },
+            handleSubmit() {
+                if (this.canSubmit()) {
+                    console.log('The Review Submit form has been submitted.');
+                    storage
+                        .post(this.getUrl(), {
+                            'sku': skuModel.sku(),
+                            'boxConfigurations': ko.toJSON(boxConfigurationsModel.boxConfigurations)
+                        })
+                        .done(response => console.log('Response', response))
+                        .fail(err => console.log('Error', err));
+                } else {
+                    console.log('The Review Submit form has an error.');
+                }
+            },
+            getUrl(){
+                return url.build('inventory-fulfillment/index/post')
             }
         })
     }

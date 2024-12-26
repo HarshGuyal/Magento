@@ -1,22 +1,27 @@
 <div class="review-submit" data-bind="visible: boxConfigurationsIsSuccess">
     <h2>Review and Submit</h2>
     <p>Please review the box configurations before submitting</p>
-    <table>
-        <thead>
-            <tr>
-                <th data-bind="i18n: 'Number of boxes'"></th>
-                <th data-bind="i18n: 'Shipment weight'"></th>
-                <th data-bind="i18n: 'Billable weight'"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><span data-bind="text: getUpdatedNumberOfBoxes()"></span></td>
-                <td><span data-bind="text: getTotalWeight()"></span></td>
-                <td><span data-bind="text: getBillableWeight()"></span></td>
-            </tr>
-        </tbody>
-    </table>
+    <p><!-- ko i18n: 'Please review the box configurations before submitting.' --><!-- /ko --></p>
+    <form data-bind="submit: handleSubmit, attr: { action : getUrl()}" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th data-bind="i18n: 'Number of boxes'"></th>
+                    <th data-bind="i18n: 'Shipment weight'"></th>
+                    <th data-bind="i18n: 'Billable weight'"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span data-bind="text: getUpdatedNumberOfBoxes()"></span></td>
+                    <td><span data-bind="text: getTotalWeight()"></span></td>
+                    <td><span data-bind="text: getBillableWeight()"></span></td>
+                </tr>
+            </tbody>
+        </table>
+        <input name="boxConfigurations" data-bind="value: ko.toJSON(boxConfigurations)"/>
+        <input name="sku" data-bind="value: sku()"/>
+    </form>
     <input type="checkbox" name="review-checkbox" data-bind="checked: checkBox">I agree to Terms & Conditions.</input>
     <button class="action primary" type="submit" data-bind="enable: getButtonUpdate()">Accept Shipping Plan</button>
 </div>
