@@ -379,6 +379,7 @@ return [
         'Harsh_FreeShippingPromo' => 1,
         'Harsh_InventoryFulfillment' => 1,
         'Harsh_JsFun' => 1,
+        'Harsh_ProductCompare' => 1,
         'Juno_Theme' => 1,
         'MarkShust_LayoutHandleLogger' => 1,
         'PayPal_Braintree' => 1,
