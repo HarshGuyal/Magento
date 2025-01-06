@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15821c514e7191759775100ce510b368",
+    "content-hash": "3b00d238e028f8f9fd273da3274ce86a",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -19163,6 +19163,57 @@
                 "source": "https://github.com/magento/magento-zend-pdf/tree/1.16.3"
             },
             "time": "2023-08-25T12:52:21+00:00"
+        },
+        {
+            "name": "markshust/magento2-module-disabletwofactorauth",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/markshust/magento2-module-disabletwofactorauth.git",
+                "reference": "4dbf2e3dfc380e26d93ca3aa4a4b8f98007e5d54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/markshust/magento2-module-disabletwofactorauth/zipball/4dbf2e3dfc380e26d93ca3aa4a4b8f98007e5d54",
+                "reference": "4dbf2e3dfc380e26d93ca3aa4a4b8f98007e5d54",
+                "shasum": ""
+            },
+            "require": {
+                "magento/framework": "^103",
+                "php": "^7||^8"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MarkShust\\DisableTwoFactorAuth\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "The DisableTwoFactorAuth module provides the ability to disable two-factor authentication.",
+            "keywords": [
+                "2fa",
+                "authentication",
+                "dev",
+                "magento",
+                "magento2",
+                "two-factor"
+            ],
+            "support": {
+                "source": "https://github.com/markshust/magento2-module-disabletwofactorauth/tree/2.0.2",
+                "issues": "https://github.com/markshust/magento2-module-disabletwofactorauth/issues"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/markshust"
+                }
+            ],
+            "time": "2024-11-05T17:01:33+00:00"
         },
         {
             "name": "markshust/magento2-module-layouthandlelogger",
