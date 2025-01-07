@@ -10,6 +10,9 @@
         },
         "constraint": {
             "PRIMARY": true
+        },
+        "index": {
+            "HARSH_MINERVA_FAQ_QUESTION": true
         }
     }
 }
