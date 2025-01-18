@@ -376,6 +376,7 @@ return [
         'Harsh_Blog' => 1,
         'Harsh_BlogExtra' => 1,
         'Harsh_CheckoutMessages' => 1,
+        'Harsh_CustomCheckout' => 1,
         'Harsh_FreeShippingPromo' => 1,
         'Harsh_InventoryFulfillment' => 1,
         'Harsh_JsFun' => 1,
@@ -388,6 +389,7 @@ return [
         'PayPal_BraintreeCustomerBalance' => 1,
         'PayPal_BraintreeGiftCardAccount' => 1,
         'PayPal_BraintreeGiftWrapping' => 1,
-        'PayPal_BraintreeGraphQl' => 1
+        'PayPal_BraintreeGraphQl' => 1,
+        'Yireo_DisableCsp' => 1
     ]
 ];
